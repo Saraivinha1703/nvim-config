@@ -2,6 +2,8 @@ require("config.options")
 require("config.keybinds")
 require("config.lazy")
 
+require('lualine').setup({})
+
 vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
