@@ -8,7 +8,10 @@ return {
 			-- indent = { enable = true },
 			autotage = { enable = true },
 			ensure_installed = {
+				"markdown",
+				"markdown_inline",
 				"lua",
+				"yaml",
 				"javascript",
 				"typescript",
 				"tsx",
@@ -16,6 +19,7 @@ return {
 				"html",
 				"c_sharp",
 				"razor",
+				"c",
 			},
 		})
 	end,

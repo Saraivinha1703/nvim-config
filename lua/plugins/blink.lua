@@ -66,6 +66,8 @@ return {
 			documentation = { auto_show = false },
 			list = { selection = { preselect = false, auto_insert = false } },
 			menu = {
+				auto_show = false,
+				-- auto_show_delay_ms = 5000, -- Didn't really like the behavior of the autocompletion
 				draw = {
 					columns = {
 						{ "label", "label_description", gap = 2 },

@@ -3,23 +3,29 @@ return {
 	config = function()
 		local builtin = require("statuscol.builtin")
 		require("statuscol").setup({
-			-- configuration goes here, for example:
 			relculright = true,
+			bt_ignore = { "terminal" },
+			ft_ignore = { "oil" },
 			segments = {
 				{
-					text = { builtin.foldfunc },
+					text = { builtin.foldfunc, " " },
+					sign = { auto = "  " },
 					click = "v:lua.ScFa",
 				},
 				{
-					sign = { namespace = { "gitsigns" }, maxwidth = 2, auto = true },
+					sign = { namespace = { "diagnostic" }, maxwidth = 1, colwidth = 1, auto = " ", wrap = true },
 					click = "v:lua.ScSa",
 				},
 				{
-					text = { builtin.lnumfunc, "  " },
-					click = "v:lua.ScLa"
+					text = { builtin.lnumfunc, " " },
+					click = "v:lua.ScLa",
 				},
 				{
-					sign = { name = { ".*" }, maxwidth = 2, colwidth = 2, auto = true, wrap = true },
+					sign = { namespace = { "gitsigns" }, maxwidth = 1, auto = true },
+					click = "v:lua.ScSa",
+				},
+				{
+					sign = { name = { ".*" }, maxwidth = 1, auto = " ", wrap = true },
 					click = "v:lua.ScSa",
 				},
 			},

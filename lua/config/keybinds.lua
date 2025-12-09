@@ -1,6 +1,5 @@
-vim.g.mapleader = " "
 vim.o.clipboard = "unnamedplus"
-vim.keymap.set("n", "<leader>cd", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>cd", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>yy", '"+yy')
 vim.keymap.set("n", "<leader>ww", ":w<CR>")
@@ -8,8 +7,24 @@ vim.keymap.set("n", "<leader>wa", ":wa<CR>")
 vim.keymap.set("n", "<leader>wq", ":w<CR> :q<CR>")
 vim.keymap.set("n", "<leader>so", ":update<CR> :source<CR>")
 vim.keymap.set("n", "<leader>cs", ":colo vscode<CR>")
-vim.keymap.set("n", "<leader>rr", ":Roslyn restart<CR>")
+vim.keymap.set("n", "<leader>rr", "<cmd>Roslyn restart<CR>")
 vim.keymap.set("i", "jk", "<Esc>")
+vim.keymap.set("n", "<leader>fe", "<cmd>Oil<CR>")
+vim.keymap.set("t", "<C-M-t>", function()
+	Snacks.terminal()
+end)
+vim.keymap.set("t", "<C-w>h", "[[<cmd>wincmd h<CR>]]", { buffer = 0 })
+vim.keymap.set("t", "<C-w>j", "[[<c<cmd>wincmd j<CR>]]", { buffer = 0 })
+vim.keymap.set("t", "<C-w>k", "[[<c<cmd>wincmd k<CR>]]", { buffer = 0 })
+vim.keymap.set("t", "<C-w>l", "[[<c<cmd>wincmd l<CR>]]", { buffer = 0 })
+vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+vim.keymap.set("n", "<leader>pf", function()
+	local winid = require("ufo").peekFoldedLinesUnderCursor()
+	if not winid then
+		vim.lsp.buf.hover()
+	end
+end)
 
 vim.keymap.set(
 	"n",
@@ -17,6 +32,10 @@ vim.keymap.set(
 	vim.diagnostic.open_float,
 	{ desc = "Diagnostics : Current" }
 )
+
+vim.keymap.set("n", "<leader>gc", "<cmd>Gitsigns diffthis<CR>")
+
+vim.keymap.set("n", "<leader>mp", "<cmd>Markview splitToggle<CR>")
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(event)
@@ -31,7 +50,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("<leader>td", require("telescope.builtin").lsp_type_definitions, "Type Definitions")
 		map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "Document Symbols")
 		map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Workspace Symbols")
-		map("<leader>if", vim.lsp.buf.format, "Indent File")
+		map("<leader>fi", vim.lsp.buf.format, "File Indent")
 		map("<leader>hd", vim.lsp.buf.hover, "Hover Documentation")
 		map("<leader>rn", vim.lsp.buf.rename, "Rename Across Project")
 		map("<leader>ca", vim.lsp.buf.code_action, "Code Action")
