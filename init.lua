@@ -1,16 +1,19 @@
 vim.g.mapleader = " "
+
 require("config.lazy")
 require("config.keybinds")
 require("config.options")
 require("lsp.lua_ls")
 require("lsp.clangd")
 require("lsp.roslyn")
+require("lsp.vtsls").setup(require("mason-registry"))
 
 require("telescope").setup({
 	defaults = {
-		file_ignore_patterns = { "%__virtual.cs$" },
+		file_ignore_patterns = { "%__virtual.cs$", "%__virtual.html$" },
 	},
 })
+
 require("ibl").setup({})
 require("lualine").setup({})
 
@@ -20,10 +23,7 @@ require("ufo").setup({
 	end,
 })
 
-vim.lsp.enable("lua_ls")
-vim.lsp.enable("clangd")
-vim.lsp.enable("yamlls")
-vim.lsp.enable("roslyn")
+vim.lsp.enable({ "html", "lua_ls", "clangd", "yamlls", "roslyn", "vtsls" })
 
 vim.diagnostic.enable()
 vim.lsp.diagnostic.enable = true

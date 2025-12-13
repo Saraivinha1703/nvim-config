@@ -1,8 +1,16 @@
 return {
+	{
+		"neovim/nvim-lspconfig",
+	},
 	{ -- Auto close brackets, braces and quotes
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		config = true,
+	},
+	{
+		"davidmh/mdx.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		event = "BufEnter *.mdx",
 	},
 	{ -- Git plugin
 		"tpope/vim-fugitive",
@@ -35,7 +43,7 @@ return {
 						"TelescopeResults",
 						"oil",
 					},
-				}
+				},
 			})
 		end,
 	},
@@ -47,9 +55,9 @@ return {
 				current_line_blame_opts = {
 					delay = 200,
 					virt_text_priority = 1000,
-				}
+				},
 			})
-			vim.cmd "set statusline+=%{get(b:,'gitsigns_status','')}"
+			vim.cmd("set statusline+=%{get(b:,'gitsigns_status','')}")
 		end,
 	},
 	{

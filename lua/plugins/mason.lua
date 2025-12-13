@@ -17,6 +17,7 @@ return {
 				ensure_installed = {
 					"lua-language-server",
 					"yaml-language-server",
+					"mdx_analyzer",
 
 					"xmlformatter",
 					"csharpier",
@@ -31,7 +32,6 @@ return {
 					"json-lsp",
 
 					"roslyn",
-					"rzls",
 
 					"clangd",
 					"clang-format",
