@@ -9,7 +9,6 @@ return {
 			segments = {
 				{
 					text = { builtin.foldfunc, " " },
-					sign = { auto = "  " },
 					click = "v:lua.ScFa",
 				},
 				{
@@ -21,7 +20,7 @@ return {
 					click = "v:lua.ScLa",
 				},
 				{
-					sign = { namespace = { "gitsigns" }, maxwidth = 1, auto = true },
+					sign = { namespace = { "gitsigns" }, maxwidth = 1, colwidth = 1, auto = " ", wrap = true },
 					click = "v:lua.ScSa",
 				},
 				{
