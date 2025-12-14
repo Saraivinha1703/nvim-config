@@ -8,6 +8,18 @@ require("lsp.clangd")
 require("lsp.roslyn")
 require("lsp.vtsls").setup(require("mason-registry"))
 
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("lsp", { clear = true }),
+	callback = function(args)
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			buffer = args.buf,
+			callback = function()
+				vim.lsp.buf.format({ async = false, id = args.data.client_id })
+			end,
+		})
+	end,
+})
+
 require("telescope").setup({
 	defaults = {
 		file_ignore_patterns = { "%__virtual.cs$", "%__virtual.html$" },
