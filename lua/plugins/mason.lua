@@ -15,7 +15,6 @@ return {
 					backdrop = 100,
 				},
 				ensure_installed = {
-					"lua-language-server",
 					"yaml-language-server",
 					"mdx_analyzer",
 
@@ -28,7 +27,7 @@ return {
 					"css-lsp",
 					"tailwindcss",
 					"eslint-lsp",
-					"typescript-language-server",
+					"vtsls",
 					"json-lsp",
 
 					"roslyn",

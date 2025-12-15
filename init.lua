@@ -35,11 +35,20 @@ require("ibl").setup({})
 require("lualine").setup({})
 
 require("ufo").setup({
-	provider_selector = function(bufnr, filetype, buftype)
+	provider_selector = function()
 		return { "lsp", "indent" }
 	end,
 })
 
-vim.lsp.enable({ "html", "emmylua_ls", "clangd", "yamlls", "roslyn", "vtsls", "jsonls" })
+vim.lsp.enable({
+	"cssls",
+	"html",
+	"emmylua_ls",
+	"clangd",
+	"yamlls",
+	"roslyn",
+	"vtsls",
+	"jsonls",
+})
 
 vim.diagnostic.enable()

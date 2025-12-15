@@ -1,9 +1,6 @@
 return {
 	{ "ii14/emmylua-nvim" },
 	{
-		"neovim/nvim-lspconfig",
-	},
-	{ -- Auto close brackets, braces and quotes
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		config = true,
@@ -13,7 +10,7 @@ return {
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		event = "BufEnter *.mdx",
 	},
-	{ -- Git plugin
+	{
 		"tpope/vim-fugitive",
 	},
 	{ "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },

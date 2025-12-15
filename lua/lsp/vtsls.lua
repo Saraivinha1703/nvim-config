@@ -29,7 +29,7 @@ function M.setup(registry)
 	if not pkg:is_installed() then
 		pkg:install({ "vtsls" }, function()
 			for _, name in ipairs(M.ts_plugins) do
-				M.ts_plugins[name] = install_plugin(name)
+				M.plugin_paths[name] = install_plugin(name)
 			end
 		end)
 	end
@@ -51,7 +51,7 @@ function M.setup(registry)
 					globalPlugins = {
 						{
 							name = "@mdx-js/typescript-plugin",
-							location = M.ts_plugins["@mdx-js/typescript-plugin"],
+							location = M.plugin_paths["@mdx-js/typescript-plugin"],
 							enableForWorkspaceTypeScriptVersions = true,
 						},
 					},
@@ -59,8 +59,6 @@ function M.setup(registry)
 			},
 		},
 	})
-
-	vim.lsp.enable("vtsls")
 end
 
 return M
