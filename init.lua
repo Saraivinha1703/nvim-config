@@ -24,6 +24,11 @@ require("telescope").setup({
 	defaults = {
 		file_ignore_patterns = { "%__virtual.cs$", "%__virtual.html$" },
 	},
+	pickers = {
+		find_files = {
+			hidden = true,
+		},
+	},
 })
 
 require("ibl").setup({})
