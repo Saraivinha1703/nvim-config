@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 require("config.lazy")
 require("config.keybinds")
 require("config.options")
-require("lsp.lua_ls")
+require("lsp.emmylua_ls")
 require("lsp.clangd")
 require("lsp.roslyn")
 require("lsp.vtsls").setup(require("mason-registry"))
@@ -35,7 +35,6 @@ require("ufo").setup({
 	end,
 })
 
-vim.lsp.enable({ "html", "lua_ls", "clangd", "yamlls", "roslyn", "vtsls" })
+vim.lsp.enable({ "html", "emmylua_ls", "clangd", "yamlls", "roslyn", "vtsls", "jsonls" })
 
 vim.diagnostic.enable()
-vim.lsp.diagnostic.enable = true

@@ -13,6 +13,7 @@ return {
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = { enabled = true },
+		terminal = { border = "rounded" },
 		statuscolumn = {
 			enabled = true,
 			left = { "mark", "sign" }, -- priority of signs on the left (high to low)
@@ -24,10 +25,14 @@ return {
 		},
 		words = { enabled = true },
 		styles = {
+			float = {
+				backdrop = 100,
+				border = "rounded",
+			},
 			lazygit = {
-				position = "float"
-			}
-		}
+				position = "float",
+			},
+		},
 	},
 	keys = {
 		{
@@ -77,7 +82,7 @@ return {
 			"<leader>gl",
 			function()
 				Snacks.lazygit.log()
-			end
+			end,
 		},
 		{
 			"<leader>gb",

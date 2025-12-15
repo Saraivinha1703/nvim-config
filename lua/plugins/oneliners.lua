@@ -1,4 +1,5 @@
 return {
+	{ "ii14/emmylua-nvim" },
 	{
 		"neovim/nvim-lspconfig",
 	},

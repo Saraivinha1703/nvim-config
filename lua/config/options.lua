@@ -13,17 +13,15 @@ vim.o.foldlevelstart = 99
 
 vim.diagnostic.config({
 	virtual_text = {
-		source = false, -- omit LSP name to save space
-		-- virt_text_pos = "eol", -- display right beside the line
+		source = false,
 		severity = {
-			-- these levels should be familiar. Keep what's needed.
 			vim.diagnostic.severity.ERROR,
 			vim.diagnostic.severity.WARN,
 			vim.diagnostic.severity.INFO,
 			vim.diagnostic.severity.HINT,
 		},
 	},
-	severity_sort = true, -- prioritize errors
+	severity_sort = true,
 	update_in_insert = true,
 	underline = true,
 	signs = {
@@ -38,10 +36,9 @@ vim.diagnostic.config({
 		border = "rounded",
 	},
 	jump = {
-		float = true, -- open float after jump
-		wrap = true, -- wrap to start at the end of the file
+		float = true,
+		wrap = true,
 		severity = {
-			-- I choose to jump only to Errors and Warnings
 			vim.diagnostic.severity.ERROR,
 			vim.diagnostic.severity.WARN,
 		},
