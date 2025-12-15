@@ -26,14 +26,13 @@ vim.keymap.set("n", "<leader>pf", function()
 	end
 end)
 
-vim.keymap.set(
-	"n",
-	"<leader>di", -- M is alt. Use <C-d> for ctrl.
-	vim.diagnostic.open_float,
-	{ desc = "Diagnostics : Current" }
-)
+vim.keymap.set("n", "<leader>di", vim.diagnostic.open_float, { desc = "Diagnostics : Current" })
 
 vim.keymap.set("n", "<leader>gc", "<cmd>Gitsigns diffthis<CR>")
+vim.keymap.set("n", "<leader>hr", "<cmd>Gitsigns reset_hunk<CR>")
+vim.keymap.set("n", "<leader>hp", "<cmd>Gitsigns preview_hunk<CR>")
+vim.keymap.set("n", "<leader>hs", "<cmd>Gitsigns stage_hunk<CR>")
+vim.keymap.set("n", "<leader>hu", "<cmd>echo expand('%:p') | Git reset --patch<CR>")
 
 vim.keymap.set("n", "<leader>mp", "<cmd>Markview splitToggle<CR>")
 
