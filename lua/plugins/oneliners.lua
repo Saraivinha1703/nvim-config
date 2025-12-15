@@ -58,7 +58,6 @@ return {
 					virt_text_priority = 1000,
 				},
 			})
-			vim.cmd("set statusline+=%{get(b:,'gitsigns_status','')}")
 		end,
 	},
 	{
