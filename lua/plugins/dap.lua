@@ -25,37 +25,44 @@ return {
 			ui.close()
 		end
 
-		dap.configurations = {
-			cs = { -- untested
-				{
-					type = "coreclr",
-					name = "launch - coreclr",
-					request = "launch",
-					justMyCode = "false",
-					program = function()
-						return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/", "file")
-					end,
-				},
-				{
-					type = "coreclr",
-					name = "attach - coreclr",
-					request = "attach",
-					justMyCode = "false",
-					processId = require("dap.utils").pick_process,
-				},
-			},
-		}
+		-- dap.configurations = {
+		-- 	cs = { -- untested
+		-- 		{
+		-- 			type = "coreclr",
+		-- 			name = "launch - coreclr",
+		-- 			request = "launch",
+		-- 			justMyCode = "false",
+		-- 			program = function()
+		-- 				return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/", "file")
+		-- 			end,
+		-- 		},
+		-- 		-- 		{
+		-- 			type = "coreclr",
+		-- 			name = "attach - coreclr",
+		-- 			request = "attach",
+		-- 			justMyCode = "false",
+		-- 			processId = require("dap.utils").pick_process,
+		-- 		},
+		-- 	},
+		-- }
 
 		vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
 		vim.keymap.set("n", "<leader>bc", dap.clear_breakpoints)
+
+		vim.fn.sign_define("DapBreakpoint", {
+			text = "",
+			texthl = "DapBreakpointColor",
+			numhl = "DapBreakpoint",
+			linehl = "DapBreakpoint",
+		})
 
 		vim.cmd("hi DapBreakpointColor guifg=#e11d48")
 
 		vim.fn.sign_define("DapBreakpoint", {
 			text = "",
 			texthl = "DapBreakpointColor",
-			numhl = "",
-			linehl = ""
+			numhl = "DapBreakpoint",
+			linehl = "DapBreakpoint",
 		})
 
 		vim.keymap.set("n", "<leader>?", function()
