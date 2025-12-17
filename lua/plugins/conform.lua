@@ -6,6 +6,7 @@ return {
 		formatters_by_ft = {
 			cs = { "csharpier" },
 			csproj = { "csharpier" },
+			xml = { "csharpier" },
 			javascript = { "prettier" },
 			javascriptreact = { "prettier" },
 			typescript = { "prettier" },

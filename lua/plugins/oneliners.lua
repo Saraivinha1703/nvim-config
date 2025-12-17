@@ -1,6 +1,16 @@
 return {
 	{ "ii14/emmylua-nvim" },
 	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup({
+				aliases = {
+					["razor"] = "html",
+				},
+			})
+		end,
+	},
+	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		config = true,
