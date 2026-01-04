@@ -42,7 +42,7 @@ return {
 			documentation = { auto_show = false, window = { border = "rounded" } },
 			list = { selection = { preselect = false, auto_insert = false } },
 			menu = {
-				auto_show = false,
+				auto_show = true,
 				border = "rounded",
 				draw = {
 					columns = {

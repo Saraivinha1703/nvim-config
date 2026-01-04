@@ -17,7 +17,12 @@ return {
 		formatters = {
 			csharpier = {
 				command = "csharpier",
-				args = { "format", "--write-stdout" },
+				args = {
+					"format",
+					"--write-stdout",
+					"--config-path",
+					"/home/saraivinha/.config/nvim/.csharpierrc.json",
+				},
 				to_stdin = true,
 			},
 		},
