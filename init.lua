@@ -8,6 +8,16 @@ require("lsp.clangd")
 require("lsp.roslyn")
 require("lsp.vtsls").setup(require("mason-registry"))
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "json",
+	callback = function()
+		vim.bo.shiftwidth = 2
+		vim.bo.tabstop = 2
+		vim.bo.softtabstop = 2
+		vim.bo.expandtab = true
+	end,
+})
+
 require("telescope").setup({
 	defaults = {
 		file_ignore_patterns = { "%__virtual.cs$", "%__virtual.html$" },

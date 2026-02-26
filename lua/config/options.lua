@@ -13,6 +13,14 @@ vim.o.foldenable = true
 vim.o.fillchars = "foldopen:,foldclose:,eob: ,"
 vim.o.foldlevelstart = 99
 
+vim.o.directory = vim.fn.stdpath("state") .. "/swap//"
+vim.o.swapfile = true
+vim.o.backup = false
+vim.o.writebackup = false
+vim.o.undofile = true
+vim.o.updatetime = 250
+vim.o.autowrite = true
+
 vim.diagnostic.config({
 	virtual_text = {
 		source = false,
