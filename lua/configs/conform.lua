@@ -1,0 +1,27 @@
+local conform = require("conform")
+
+conform.setup({
+    formatters_by_ft = {
+        cs = { "csharpier" },
+        csproj = { "csharpier" },
+        xml = { "csharpier" },
+        javascript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescript = { "prettier" },
+        typescriptreact = { "prettier" },
+        css = { "prettier" },
+        html = { "prettier" },
+    },
+    formatters = {
+        csharpier = {
+            command = "csharpier",
+            args = {
+                "format",
+                "--write-stdout",
+                "--config-path",
+                "/home/saraivinha/.config/nvim/.csharpierrc.json",
+            },
+            to_stdin = true,
+        },
+    },
+})
