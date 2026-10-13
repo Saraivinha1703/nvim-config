@@ -38,4 +38,8 @@ vim.pack.add {
     "https://github.com/Mofiqul/vscode.nvim",
     "https://github.com/Mofiqul/dracula.nvim",
     "https://github.com/sainnhe/everforest",
+    -- markdown
+    "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+    "https://github.com/3rd/image.nvim",
+    "https://github.com/techwizrd/render-latex.nvim"
 }

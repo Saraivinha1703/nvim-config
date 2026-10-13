@@ -13,6 +13,7 @@ treesitter.install({
     "css",
     "markdown",
     "markdown_inline",
+    "latex",
     "zig",
 })
 
