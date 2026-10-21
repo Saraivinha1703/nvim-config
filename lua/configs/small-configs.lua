@@ -44,7 +44,6 @@ require("mason-lspconfig").setup({
         "vtsls",
         "html",
         "cssls",
-        "roslyn_ls",
         "yamlls",
         "jsonls",
         "tailwindcss",
@@ -93,4 +92,11 @@ require("catppuccin").setup({
         nvimtree = true,
         notify = true,
     }
+})
+
+require("smear_cursor").setup()
+
+vim.lsp.config("roslyn_ls", {
+    cmd = { "" },   -- disables the default command
+    filetypes = {}, -- removes filetype association so it never auto-attaches
 })

@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd("VimLeavePre", {
     end,
 })
 
-vim.api.nvim_create_autocmd("BufLeave", {
+vim.api.nvim_create_autocmd({ "BufLeave", "WinLeave", "FocusLost" }, {
     pattern = "*.md",
     callback = function()
         local ok, image = pcall(require, "image")
@@ -28,16 +28,4 @@ vim.api.nvim_create_autocmd("BufLeave", {
             image.clear()
         end
     end,
-})
-
-vim.lsp.enable({
-    "lua_ls",
-    "vtsls",
-    "html",
-    "jsonls",
-    "cssls",
-    "roslyn",
-    "tailwindcss",
-    "yamlls",
-    "zls",
 })

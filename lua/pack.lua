@@ -41,5 +41,9 @@ vim.pack.add {
     -- markdown
     "https://github.com/MeanderingProgrammer/render-markdown.nvim",
     "https://github.com/3rd/image.nvim",
-    "https://github.com/techwizrd/render-latex.nvim"
+    "https://github.com/techwizrd/render-latex.nvim",
+    -- roslyn
+    "https://github.com/seblyng/roslyn.nvim",
+    -- some bs just because
+    "https://github.com/sphamba/smear-cursor.nvim",
 }
